@@ -22,8 +22,9 @@ export default function Navbar({ address, balance, onConnect, onDisconnect, acti
           className="navbar-logo-icon"
           animate={{ rotate: [0, 5, -5, 0] }}
           transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+          style={{ display: 'flex', alignItems: 'center' }}
         >
-          🎮
+          <img src="/favicon.svg" alt="PlayChain Logo" style={{ width: '28px', height: '28px' }} />
         </motion.span>
         <span>
           Play<span className="grad" style={{ background: 'linear-gradient(135deg, var(--neon), var(--neon2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Chain</span>
