@@ -135,12 +135,7 @@ function App() {
                 >
                   Explore Markets
                 </motion.button>
-                <motion.a 
-                  href="https://github.com" target="_blank" rel="noreferrer" className="btn btn-ghost btn-lg"
-                  whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(124,58,237,0.4)" }} whileTap={{ scale: 0.95 }}
-                >
-                  View Smart Contract
-                </motion.a>
+
               </motion.div>
             </section>
 
