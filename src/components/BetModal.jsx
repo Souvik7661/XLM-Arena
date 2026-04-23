@@ -40,20 +40,23 @@ export default function BetModal({ match, onClose, onPlaceBet, address, balance 
     }
   };
 
+  const appleEase = [0.16, 1, 0.3, 1];
+
   return (
     <motion.div 
       className="modal-overlay" 
       onClick={(e) => { if (e.target === e.currentTarget) onClose(); }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      initial={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+      animate={{ opacity: 1, backdropFilter: 'blur(10px)' }}
+      exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
+      transition={{ duration: 0.6, ease: appleEase }}
     >
       <motion.div 
         className="modal"
-        initial={{ scale: 0.8, opacity: 0, y: 20 }}
+        initial={{ scale: 0.9, opacity: 0, y: 30 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
-        exit={{ scale: 0.8, opacity: 0, y: 20 }}
-        transition={{ type: "spring", damping: 25, stiffness: 300 }}
+        exit={{ scale: 0.95, opacity: 0, y: 20 }}
+        transition={{ duration: 0.7, ease: appleEase }}
       >
         <div className="modal-header">
           <h2 className="modal-title">Place Prediction</h2>
@@ -64,8 +67,8 @@ export default function BetModal({ match, onClose, onPlaceBet, address, balance 
           <motion.div 
             className={`team-option ${selectedTeam === 'A' ? 'selected' : ''}`}
             onClick={() => setSelectedTeam('A')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.3, ease: appleEase } }}
+            whileTap={{ scale: 0.98 }}
           >
             <div className="team-option-logo">{match.teamA.logo}</div>
             <div className="team-option-name">{match.teamA.short}</div>
@@ -76,8 +79,8 @@ export default function BetModal({ match, onClose, onPlaceBet, address, balance 
             className={`team-option ${selectedTeam === 'B' ? 'selected' : ''}`}
             style={selectedTeam === 'B' ? { borderColor: 'var(--neon2)', background: 'rgba(0,217,245,0.1)' } : {}}
             onClick={() => setSelectedTeam('B')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.3, ease: appleEase } }}
+            whileTap={{ scale: 0.98 }}
           >
             <div className="team-option-logo">{match.teamB.logo}</div>
             <div className="team-option-name">{match.teamB.short}</div>
@@ -105,8 +108,8 @@ export default function BetModal({ match, onClose, onPlaceBet, address, balance 
                 key={val} 
                 className="quick-btn"
                 onClick={() => setAmount(val === 'Max' ? Math.floor(parseFloat(balance) - 1).toString() : val.toString())}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
+                whileHover={{ scale: 1.05, transition: { duration: 0.3, ease: appleEase } }}
+                whileTap={{ scale: 0.95 }}
               >
                 {val === 'Max' ? 'MAX' : `+${val}`}
               </motion.button>
@@ -134,7 +137,7 @@ export default function BetModal({ match, onClose, onPlaceBet, address, balance 
           style={{ width: '100%', justifyContent: 'center' }}
           disabled={!selectedTeam || !amount || parseFloat(amount) <= 0 || loading || !address}
           onClick={handleBet}
-          whileHover={{ scale: 1.02 }}
+          whileHover={{ scale: 1.02, transition: { duration: 0.3, ease: appleEase } }}
           whileTap={{ scale: 0.98 }}
         >
           {loading ? 'Confirming in Wallet...' : !address ? 'Connect Wallet to Bet' : 'Place Prediction'}

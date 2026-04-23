@@ -8,18 +8,20 @@ export default function Navbar({ address, balance, onConnect, onDisconnect, acti
     return `${addr.slice(0, 5)}...${addr.slice(-4)}`;
   };
 
+  const appleEase = [0.16, 1, 0.3, 1];
+
   return (
     <motion.nav 
       className="navbar"
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      initial={{ y: -30, opacity: 0, filter: 'blur(4px)' }}
+      animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+      transition={{ duration: 1, ease: appleEase }}
     >
       <div className="navbar-logo">
         <motion.span 
           className="navbar-logo-icon"
-          animate={{ rotate: [0, 10, -10, 0] }}
-          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+          animate={{ rotate: [0, 5, -5, 0] }}
+          transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
         >
           🎮
         </motion.span>
@@ -50,8 +52,8 @@ export default function Navbar({ address, balance, onConnect, onDisconnect, acti
           <motion.button 
             className="btn btn-primary" 
             onClick={onConnect}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.3, ease: appleEase } }}
+            whileTap={{ scale: 0.98 }}
           >
             <Wallet size={16} />
             Connect Wallet
@@ -60,22 +62,32 @@ export default function Navbar({ address, balance, onConnect, onDisconnect, acti
           <>
             <motion.div 
               className="wallet-chip"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: appleEase }}
             >
               <div className="wallet-dot"></div>
               {balance} XLM
             </motion.div>
-            <div className="wallet-chip" style={{ background: 'transparent', border: '1px solid var(--border)' }}>
+            <motion.div 
+              className="wallet-chip" 
+              style={{ background: 'transparent', border: '1px solid var(--border)' }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: appleEase }}
+            >
               {formatAddress(address)}
-            </div>
+            </motion.div>
             <motion.button 
               className="btn btn-ghost" 
               onClick={onDisconnect} 
               style={{ padding: '0.4rem', borderRadius: '50%' }} 
               title="Disconnect"
-              whileHover={{ scale: 1.1, backgroundColor: 'rgba(239,68,68,0.1)', color: 'var(--red)' }}
-              whileTap={{ scale: 0.9 }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: appleEase }}
+              whileHover={{ scale: 1.05, backgroundColor: 'rgba(239,68,68,0.1)', color: 'var(--red)', transition: { duration: 0.3, ease: appleEase } }}
+              whileTap={{ scale: 0.95 }}
             >
               <LogOut size={16} />
             </motion.button>

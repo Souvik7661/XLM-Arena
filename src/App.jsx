@@ -82,13 +82,13 @@ function App() {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: { staggerChildren: 0.1 }
+      transition: { staggerChildren: 0.1, delayChildren: 0.1 }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+    hidden: { opacity: 0, y: 40, scale: 0.9 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { type: "spring", stiffness: 400, damping: 20 } }
   };
 
   return (
@@ -110,39 +110,34 @@ function App() {
 
       {activeTab === 'markets' ? (
         <AnimatePresence mode="wait">
-          <motion.div key="markets" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }} transition={{ duration: 0.4 }}>
+          <motion.div key="markets" initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.02 }} transition={{ duration: 0.4 }}>
             <section className="hero">
-              <motion.div 
-                className="hero-badge"
-                initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}
-              >
-                Stellar Testnet MVP
-              </motion.div>
               <motion.h1
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.6 }}
+                initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 400, damping: 25, delay: 0.2 }}
+                className="glitch" data-text="Predict. Win. On-Chain."
               >
                 Predict. Win. <span className="grad">On-Chain.</span>
               </motion.h1>
               <motion.p
-                initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.8 }}
+                initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ type: "spring", stiffness: 300, damping: 25, delay: 0.3 }}
               >
                 The ultimate decentralized web3 gaming prediction market built on Stellar. 
                 Support your favorite teams and earn XLM rewards effortlessly.
               </motion.p>
               <motion.div 
                 className="hero-actions"
-                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}
+                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4, type: "spring", stiffness: 400, damping: 20 }}
               >
                 <motion.button 
                   className="btn btn-primary btn-lg" 
-                  onClick={() => document.getElementById('markets-section').scrollIntoView()}
-                  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                  onClick={() => document.getElementById('markets-section').scrollIntoView({ behavior: 'smooth' })}
+                  whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(0,245,160,0.6)" }} whileTap={{ scale: 0.95 }}
                 >
                   Explore Markets
                 </motion.button>
                 <motion.a 
                   href="https://github.com" target="_blank" rel="noreferrer" className="btn btn-ghost btn-lg"
-                  whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                  whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(124,58,237,0.4)" }} whileTap={{ scale: 0.95 }}
                 >
                   View Smart Contract
                 </motion.a>
@@ -151,7 +146,8 @@ function App() {
 
             <motion.div 
               className="stats-bar"
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9 }}
+              initial={{ opacity: 0, scaleY: 0 }} animate={{ opacity: 1, scaleY: 1 }} transition={{ delay: 0.5, duration: 0.4 }}
+              style={{ transformOrigin: 'top' }}
             >
               <div className="stat-item">
                 <div className="stat-value">6</div>
