@@ -23,12 +23,12 @@ To validate the MVP, we successfully onboarded and collected feedback from 5+ re
 ### Verifiable Testnet Users
 The following users successfully connected their Freighter wallets, received testnet XLM, and placed predictions on XLM Arena:
 
-1. `GC... (User 1 Wallet Address)` - [View on Stellar Expert](#)
-2. `GD... (User 2 Wallet Address)` - [View on Stellar Expert](#)
-3. `GA... (User 3 Wallet Address)` - [View on Stellar Expert](#)
-4. `GB... (User 4 Wallet Address)` - [View on Stellar Expert](#)
-5. `GC... (User 5 Wallet Address)` - [View on Stellar Expert](#)
-*(Replace the above with the actual 5+ public keys collected from your users)*
+1. `GAMX7AYLKU7XOJ6NBCWTSY3W5OSSOBS332M55UG2J5TH5NPCAY545QCM` - [View on Stellar Expert](https://stellar.expert/explorer/testnet/account/GAMX7AYLKU7XOJ6NBCWTSY3W5OSSOBS332M55UG2J5TH5NPCAY545QCM)
+2. `GAQ2V4ZDP7P2DYBU6CH7GTILJ7DLB5MRJRELSWGHXUHDOV2C25LQGFTS` - [View on Stellar Expert](https://stellar.expert/explorer/testnet/account/GAQ2V4ZDP7P2DYBU6CH7GTILJ7DLB5MRJRELSWGHXUHDOV2C25LQGFTS)
+3. `[User 3 Wallet Address]` - [View on Stellar Expert](#)
+4. `[User 4 Wallet Address]` - [View on Stellar Expert](#)
+5. `[User 5 Wallet Address]` - [View on Stellar Expert](#)
+*(Note: Please add 3 more unique user addresses to meet the 5+ Blue Belt requirement)*
 
 ### Future Improvements Based on Feedback
 Based on the collected user feedback, the following iteration was identified and implemented:
