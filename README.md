@@ -12,9 +12,9 @@ XLM Arena (formerly PlayChain) is a sophisticated, decentralized Web3 gaming pre
 ### Screenshots
 *(Add your image links below. You can upload images to GitHub and paste the markdown links here)*
 - **Desktop UI Screenshot:**
-  - `![Desktop UI](link-to-desktop-screenshot.png)`
+  ![Desktop UI](./Screenshot/UI.png)
 - **Mobile Responsive View Screenshot:**
-  - `![Mobile UI](link-to-mobile-screenshot.png)`
+  ![Mobile UI](./Screenshot/MobileUI.png)
 
 ### CI/CD Pipeline
 *(Add a screenshot or GitHub Actions badge showing your CI/CD pipeline running)*
