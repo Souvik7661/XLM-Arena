@@ -8,7 +8,7 @@ import { buildPaymentXDR, submitXDR, ensureAccountFunded } from './stellar';
 import { signXDR } from './walletKit';
 
 // Escrow / pool treasury address (Stellar testnet)
-export const POOL_ADDRESS = 'GAAZI4TCR3TY5OJHCTJC2A4QSY6CJWJH5IAJTGKIN2ER7LBNVKOCCWN';
+export const POOL_ADDRESS = 'GDRVVMULXSZQFEAE3XWHK5BVOUEYU2E5Q65BE4AXBJ6TCHGV6734PFHV';
 
 /**
  * Simulated in-memory market state.
