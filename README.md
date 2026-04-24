@@ -17,8 +17,7 @@ XLM Arena (formerly PlayChain) is a sophisticated, decentralized Web3 gaming pre
   ![Mobile UI](./Screenshot/MobileUI.png)
 
 ### CI/CD Pipeline
-*(Add a screenshot or GitHub Actions badge showing your CI/CD pipeline running)*
-- **CI/CD Status:** `![CI/CD Badge or Screenshot](link-to-cicd-status.png)`
+- **CI/CD Status:** [![CI/CD Pipeline](https://github.com/Souvik7661/XLM-Arena/actions/workflows/main.yml/badge.svg)](https://github.com/Souvik7661/XLM-Arena/actions)
 
 ## 🔗 On-Chain Data
 - **Central Pool Address:** `GDRVVMULXSZQFEAE3XWHK5BVOUEYU2E5Q65BE4AXBJ6TCHGV6734PFHV` *(This is the testnet destination where bets are pooled)*
