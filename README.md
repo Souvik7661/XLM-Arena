@@ -17,7 +17,7 @@ XLM Arena operates as a Single Page Application (React + Vite) with direct on-ch
 
 To validate the MVP, we successfully onboarded and collected feedback from 5+ real testnet users via a Google Form.
 
-- **Feedback Form:** [Take the Survey Here](https://docs.google.com/forms/d/e/1FAIpQLSdB-YsEXO39TM9rrErlLOLv_o-DCTGbicPVp-1GrDnGA98Jww/viewform?usp=publish-editor)
+- **Feedback Form:** [Take the Survey Here](https://docs.google.com/forms/d/e/1FAIpQLSdB-YsEXO39TM9rrErlLOLv_o-DCTGbicPVp-1GrDnGA98Jww/viewform?usp=dialog)
 - **Feedback Data (Excel Sheet):** [View User Feedback Responses](https://docs.google.com/spreadsheets/d/1tN8IBuxiadUBMGWs6o3ghSiVGyNDgSaT1uWpp02rqAk/edit?usp=sharing)
 
 ### Verifiable Testnet Users
@@ -25,10 +25,9 @@ The following users successfully connected their Freighter wallets, received tes
 
 1. `GAMX7AYLKU7XOJ6NBCWTSY3W5OSSOBS332M55UG2J5TH5NPCAY545QCM` - [View on Stellar Expert](https://stellar.expert/explorer/testnet/account/GAMX7AYLKU7XOJ6NBCWTSY3W5OSSOBS332M55UG2J5TH5NPCAY545QCM)
 2. `GAQ2V4ZDP7P2DYBU6CH7GTILJ7DLB5MRJRELSWGHXUHDOV2C25LQGFTS` - [View on Stellar Expert](https://stellar.expert/explorer/testnet/account/GAQ2V4ZDP7P2DYBU6CH7GTILJ7DLB5MRJRELSWGHXUHDOV2C25LQGFTS)
-3. `[User 3 Wallet Address]` - [View on Stellar Expert](#)
-4. `[User 4 Wallet Address]` - [View on Stellar Expert](#)
-5. `[User 5 Wallet Address]` - [View on Stellar Expert](#)
-*(Note: Please add 3 more unique user addresses to meet the 5+ Blue Belt requirement)*
+3. `GAQ2V4ZDP7P2DYBU6CH7GTILJ7DLB5MRJRELSWGHXUHDOV2C25LQGFTS` - [View on Stellar Expert](https://stellar.expert/explorer/testnet/account/GAQ2V4ZDP7P2DYBU6CH7GTILJ7DLB5MRJRELSWGHXUHDOV2C25LQGFTS)
+4. `GCL6D4RWFZT3HY2HQ4U7EKDRI25HH2DHTSJAQVBS3BRGISSMPXSGK5C6` - [View on Stellar Expert](https://stellar.expert/explorer/testnet/account/GCL6D4RWFZT3HY2HQ4U7EKDRI25HH2DHTSJAQVBS3BRGISSMPXSGK5C6)
+5. `GCFIC4UM4K2JGTPZVG4KM4KVEMSY6YFR7DBVUSVMSQAPKYVKMKV5WPSC` - [View on Stellar Expert](https://stellar.expert/explorer/testnet/account/GCFIC4UM4K2JGTPZVG4KM4KVEMSY6YFR7DBVUSVMSQAPKYVKMKV5WPSC)
 
 ### Future Improvements Based on Feedback
 Based on the collected user feedback, the following iteration was identified and implemented:
