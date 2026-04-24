@@ -17,7 +17,7 @@ XLM Arena operates as a Single Page Application (React + Vite) with direct on-ch
 
 To validate the MVP, we successfully onboarded and collected feedback from 5+ real testnet users via a Google Form.
 
-- **Feedback Data (Excel Sheet):** [View User Feedback Responses](#) *(Link your exported Google Form Excel/CSV here)*
+- **Feedback Data (Excel Sheet):** [View User Feedback Responses](https://docs.google.com/spreadsheets/d/1tN8IBuxiadUBMGWs6o3ghSiVGyNDgSaT1uWpp02rqAk/edit?usp=sharing)
 
 ### Verifiable Testnet Users
 The following users successfully connected their Freighter wallets, received testnet XLM, and placed predictions on XLM Arena:
