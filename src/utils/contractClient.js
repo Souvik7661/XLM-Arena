@@ -4,7 +4,7 @@
 // contract's escrow address and hook createMarket/resolveMarket to RPC calls.
 // ─────────────────────────────────────────────────────────────────────────────
 
-import { buildPaymentXDR, submitXDR } from './stellar';
+import { buildPaymentXDR, submitXDR, ensureAccountFunded } from './stellar';
 import { signXDR } from './walletKit';
 
 // Escrow / pool treasury address (Stellar testnet)
@@ -57,6 +57,9 @@ export async function placeBet({ matchId, team, amount, address }) {
   if (!market) throw new Error(`Market ${matchId} not initialised`);
   if (market.resolved) throw new Error('Market already resolved');
   if (amount <= 0) throw new Error('Amount must be positive');
+
+  // Ensure the pool address exists on testnet (funds it via Friendbot if not)
+  await ensureAccountFunded(POOL_ADDRESS);
 
   // Build + sign + submit XLM payment to pool
   const xdr = await buildPaymentXDR({ from: address, to: POOL_ADDRESS, amount });

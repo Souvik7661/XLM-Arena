@@ -54,3 +54,22 @@ export async function submitXDR(signedXdr) {
   const tx = new Transaction(signedXdr, NETWORK);
   return server.submitTransaction(tx);
 }
+
+/**
+ * Ensure an account exists on testnet. If it doesn't, fund it via Friendbot.
+ * Throws if funding fails.
+ */
+export async function ensureAccountFunded(publicKey) {
+  try {
+    await server.loadAccount(publicKey);
+    // Account already exists — nothing to do.
+  } catch {
+    // Account not found: fund it via Friendbot.
+    const res = await fetch(`https://friendbot.stellar.org?addr=${encodeURIComponent(publicKey)}`);
+    if (!res.ok) {
+      throw new Error(`Friendbot failed to fund ${publicKey}: ${res.statusText}`);
+    }
+    // Give the network a moment to settle.
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+  }
+}

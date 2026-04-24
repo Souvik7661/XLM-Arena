@@ -224,7 +224,7 @@ function App() {
       )}
 
       <footer className="footer">
-        <div>© 2026 PlayChain on Stellar. All rights reserved.</div>
+        <div>© 2026 XLM Arena on Stellar. All rights reserved.</div>
         <div>
           <a href="#">Terms of Service</a> | <a href="#">Soroban Docs</a>
         </div>
