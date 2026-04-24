@@ -17,6 +17,7 @@ XLM Arena operates as a Single Page Application (React + Vite) with direct on-ch
 
 To validate the MVP, we successfully onboarded and collected feedback from 5+ real testnet users via a Google Form.
 
+- **Feedback Form:** [Take the Survey Here](https://docs.google.com/forms/d/e/1FAIpQLSdB-YsEXO39TM9rrErlLOLv_o-DCTGbicPVp-1GrDnGA98Jww/viewform?usp=publish-editor)
 - **Feedback Data (Excel Sheet):** [View User Feedback Responses](https://docs.google.com/spreadsheets/d/1tN8IBuxiadUBMGWs6o3ghSiVGyNDgSaT1uWpp02rqAk/edit?usp=sharing)
 
 ### Verifiable Testnet Users
