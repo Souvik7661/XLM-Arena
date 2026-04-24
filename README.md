@@ -4,7 +4,7 @@ XLM Arena (formerly PlayChain) is a sophisticated, decentralized Web3 gaming pre
 
 ## 🚀 Project Links & Media
 - **Live Demo:** [https://play-chain-plum.vercel.app](https://play-chain-plum.vercel.app) *(Replace with your final Vercel URL if it changes)*
-- **Demo Video:** [Link to 1-Minute Demo Video](#) *(Add your YouTube/Loom video link here showing full functionality)*
+- **Demo Video:** [Watch 1-Minute Demo Video](demo_video.webp)
 
 ### Screenshots
 *(Add your image links below. You can upload images to GitHub and paste the markdown links here)*
