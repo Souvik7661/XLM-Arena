@@ -2,9 +2,24 @@
 
 XLM Arena (formerly PlayChain) is a sophisticated, decentralized Web3 gaming prediction market built on the Stellar Testnet. It features a beautifully animated, minimalistic interface and robust integration with the Freighter wallet.
 
-## 🚀 Live Demo & Video
+## 🚀 Project Links & Media
 - **Live Demo:** [https://play-chain-plum.vercel.app](https://play-chain-plum.vercel.app) *(Replace with your final Vercel URL if it changes)*
-- **Demo Video:** [Link to Demo Video](#) *(Add your YouTube/Loom video link here)*
+- **Demo Video:** [Link to 1-Minute Demo Video](#) *(Add your YouTube/Loom video link here showing full functionality)*
+
+### Screenshots
+*(Add your image links below. You can upload images to GitHub and paste the markdown links here)*
+- **Desktop UI Screenshot:**
+  - `![Desktop UI](link-to-desktop-screenshot.png)`
+- **Mobile Responsive View Screenshot:**
+  - `![Mobile UI](link-to-mobile-screenshot.png)`
+
+### CI/CD Pipeline
+*(Add a screenshot or GitHub Actions badge showing your CI/CD pipeline running)*
+- **CI/CD Status:** `![CI/CD Badge or Screenshot](link-to-cicd-status.png)`
+
+## 🔗 On-Chain Data
+- **Central Pool Address:** `GDRVVMULXSZQFEAE3XWHK5BVOUEYU2E5Q65BE4AXBJ6TCHGV6734PFHV` *(This is the testnet destination where bets are pooled)*
+- **Sample Transaction Hash:** `[Insert a transaction hash from one of your users placing a bet here]`
 
 ## 🏗 Architecture
 XLM Arena operates as a Single Page Application (React + Vite) with direct on-chain interactions:
