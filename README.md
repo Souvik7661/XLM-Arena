@@ -20,8 +20,10 @@ XLM Arena (formerly PlayChain) is a sophisticated, decentralized Web3 gaming pre
 - **CI/CD Status:** [![CI/CD Pipeline](https://github.com/Souvik7661/XLM-Arena/actions/workflows/main.yml/badge.svg)](https://github.com/Souvik7661/XLM-Arena/actions)
 
 ## 🔗 On-Chain Data
-- **Central Pool Address:** `GDRVVMULXSZQFEAE3XWHK5BVOUEYU2E5Q65BE4AXBJ6TCHGV6734PFHV` *(This is the testnet destination where bets are pooled)*
-- **Sample Transaction Hash:** `[Insert a transaction hash from one of your users placing a bet here]`
+- **Token Used:** Native Stellar Lumens (XLM) on Testnet
+- **Central Pool Address:** `GDRVVMULXSZQFEAE3XWHK5BVOUEYU2E5Q65BE4AXBJ6TCHGV6734PFHV` *(This is the testnet destination where bets are pooled natively)*
+- **Sample Transaction Hash:** [`f2066f795c00e5e759ce5914a6861bf889689cd4964ff349a4eb0c7f2aa83111`](https://stellar.expert/explorer/testnet/tx/f2066f795c00e5e759ce5914a6861bf889689cd4964ff349a4eb0c7f2aa83111)
+- **Smart Contract Inter-Contract Calls:** N/A (Standard native XLM payments are used for the current iteration pool settlement)
 
 ## 🏗 Architecture
 XLM Arena operates as a Single Page Application (React + Vite) with direct on-chain interactions:
