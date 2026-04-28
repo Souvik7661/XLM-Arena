@@ -45,6 +45,12 @@ export default function Navbar({ address, balance, onConnect, onDisconnect, acti
           >
             My Bets
           </button>
+          <button 
+            className={`nav-btn ${activeTab === 'admin' ? 'active' : ''}`}
+            onClick={() => setActiveTab('admin')}
+          >
+            Metrics
+          </button>
         </div>
       )}
 

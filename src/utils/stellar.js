@@ -47,11 +47,46 @@ export async function buildPaymentXDR({ from, to, amount }) {
 }
 
 /**
+ * Sponsor a transaction by wrapping it in a FeeBump transaction.
+ */
+export async function sponsorTransaction(signedInnerXdr) {
+  const { TransactionBuilder, Keypair, Transaction } = await import('@stellar/stellar-sdk');
+  
+  const sponsorSecret = import.meta.env.VITE_SPONSOR_SECRET;
+  if (!sponsorSecret) {
+     return signedInnerXdr; // fallback to normal if no sponsor
+  }
+  
+  const sponsorKeypair = Keypair.fromSecret(sponsorSecret);
+  
+  // Ensure sponsor is funded
+  await ensureAccountFunded(sponsorKeypair.publicKey());
+  
+  const innerTx = new Transaction(signedInnerXdr, NETWORK);
+  
+  const feeBumpTx = TransactionBuilder.buildFeeBumpTransaction(
+    sponsorKeypair,
+    BASE_FEE,
+    innerTx,
+    NETWORK
+  );
+  
+  feeBumpTx.sign(sponsorKeypair);
+  
+  return feeBumpTx.toXDR();
+}
+
+/**
  * Submit a signed XDR to Horizon.
  */
 export async function submitXDR(signedXdr) {
-  const { Transaction } = await import('@stellar/stellar-sdk');
-  const tx = new Transaction(signedXdr, NETWORK);
+  const { Transaction, FeeBumpTransaction } = await import('@stellar/stellar-sdk');
+  let tx;
+  try {
+    tx = new Transaction(signedXdr, NETWORK);
+  } catch (e) {
+    tx = FeeBumpTransaction.fromXDR(signedXdr, NETWORK);
+  }
   return server.submitTransaction(tx);
 }
 
