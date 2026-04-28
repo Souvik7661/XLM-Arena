@@ -7,12 +7,14 @@ import BetModal from './components/BetModal';
 import MyBets from './components/MyBets';
 import AdminDashboard from './components/AdminDashboard';
 import AnimatedBackground from './components/AnimatedBackground';
+import SplashScreen from './components/SplashScreen';
 import { MATCHES, GAME_FILTERS } from './data/matches';
 import { connectWallet, disconnectWallet } from './utils/walletKit';
 import { fetchXLMBalance } from './utils/stellar';
 import { initMarket, placeBet, getMarketState } from './utils/contractClient';
 
 function App() {
+  const [showSplash, setShowSplash] = React.useState(true);
   const [address, setAddress] = useState(null);
   const [balance, setBalance] = useState('0.00');
   const [activeTab, setActiveTab] = useState('markets'); 
@@ -227,6 +229,10 @@ function App() {
         return null;
     }
   };
+
+  if (showSplash) {
+    return <SplashScreen onDone={() => setShowSplash(false)} />;
+  }
 
   return (
     <div className="app">
