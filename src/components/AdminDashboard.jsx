@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Activity, Users, AlertTriangle, Database } from 'lucide-react';
-import { server, POOL_ADDRESS } from '../utils/stellar';
+import { server } from '../utils/stellar';
+import { POOL_ADDRESS } from '../utils/contractClient';
 
 export default function AdminDashboard({ matches }) {
   const [transactions, setTransactions] = useState([]);
