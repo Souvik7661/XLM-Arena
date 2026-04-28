@@ -26,9 +26,11 @@ XLM Arena (formerly PlayChain) is a sophisticated, decentralized Web3 gaming pre
 - **Sample Transaction Hash:** [`f2066f795c00e5e759ce5914a6861bf889689cd4964ff349a4eb0c7f2aa83111`](https://stellar.expert/explorer/testnet/tx/f2066f795c00e5e759ce5914a6861bf889689cd4964ff349a4eb0c7f2aa83111)
 - **Smart Contract Inter-Contract Calls:** Deployed custom Soroban Contract handles the market state and odds calculations, while standard native XLM payments are used for the current iteration pool settlement.
 
-## 🏗 Architecture
-XLM Arena operates as a Single Page Application (React + Vite) with direct on-chain interactions:
-- **Frontend:** React, Framer Motion for high-end bezier curve animations.
+## 🏗 Architecture & Advanced UI
+XLM Arena operates as a Single Page Application (React + Vite) with direct on-chain interactions and premium motion design:
+- **Frontend & Motion Design:** React and Framer Motion power high-fidelity bezier curve animations, hardware-accelerated floating elements, and seamless layout transitions.
+- **Cross-Platform Premium UX:** Implemented a custom "Liquid Glass" rendering engine that provides macOS-style interactive refractions on desktop, while elegantly degrading to touch-safe native interactions on iOS/Android. Custom webkit scrollbars and safe-area insets ensure a native feel on all operating systems.
+- **AI-Guided Onboarding:** Features "Arino", a fully CSS-animated, interactive AI onboarding robot that guides new users through the Web3 mechanics (gasless transactions, prediction markets) step-by-step.
 - **Wallet Integration:** `@stellar/freighter-api` handles secure key management and transaction signing.
 - **On-Chain Logic:** `@stellar/stellar-sdk` is used to build native XDR payments to the decentralized pool address (`GDRVVMULXSZQFEAE3XWHK5BVOUEYU2E5Q65BE4AXBJ6TCHGV6734PFHV`).
 - **State Management:** The contract client currently mocks Soroban contract state (dynamic odds computation based on pool size) while settling actual XLM transactions on the Stellar Testnet.
