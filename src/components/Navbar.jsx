@@ -17,19 +17,24 @@ export default function Navbar({ address, balance, onConnect, onDisconnect, acti
       animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
       transition={{ duration: 1, ease: appleEase }}
     >
-      <div className="navbar-logo">
-        <motion.span 
-          className="navbar-logo-icon"
-          animate={{ rotate: [0, 5, -5, 0] }}
-          transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-          style={{ display: 'flex', alignItems: 'center' }}
-        >
-          <img src="/favicon.svg" alt="XLM Arena Logo" style={{ width: '28px', height: '28px' }} />
-        </motion.span>
-        <span>
-          XLM<span className="grad" style={{ background: 'linear-gradient(135deg, var(--neon), var(--neon2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Arena</span>
-        </span>
-      </div>
+      <button
+        onClick={() => setActiveTab('markets')}
+        style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex', alignItems: 'center' }}
+      >
+        <div className="navbar-logo">
+          <motion.span 
+            className="navbar-logo-icon"
+            animate={{ rotate: [0, 5, -5, 0] }}
+            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <img src="/favicon.svg" alt="XLM Arena Logo" style={{ width: '28px', height: '28px' }} />
+          </motion.span>
+          <span>
+            XLM<span className="grad" style={{ background: 'linear-gradient(135deg, var(--neon), var(--neon2))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Arena</span>
+          </span>
+        </div>
+      </button>
 
       {address && (
         <div className="navbar-nav">
