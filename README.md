@@ -66,9 +66,9 @@ Based on the collected user feedback, the following iteration was identified and
 
 ### Monitoring, Metrics & Indexing
 - **Metrics Dashboard:** We implemented a `/admin` route (Metrics tab) tracking DAU, Total Volume, and Transaction counts dynamically.
-  - ![Metrics Dashboard](./Screenshot/Metrics.png) *(Upload Screenshot to /Screenshot/Metrics.png)*
+  - ![Metrics Dashboard](./Screenshot/Metrics.png)
 - **Monitoring (Sentry):** Active system monitoring and error boundaries are configured.
-  - ![Monitoring Dashboard](./Screenshot/Monitoring.png) *(Upload Screenshot to /Screenshot/Monitoring.png)*
+  - ![Monitoring Dashboard](./Screenshot/Metrics.png)
 - **Data Indexing:** The platform fetches and indexes raw testnet Horizon ledger data for the Pool Escrow Address in real-time, displaying historical transactions natively inside the Admin panel.
 
 ### Security
