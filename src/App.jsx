@@ -107,6 +107,24 @@ function App() {
           <AnimatePresence mode="wait">
             <motion.div key="markets" initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 1.02 }} transition={{ duration: 0.5 }}>
               <section className="hero" style={{ paddingTop: '6rem', paddingBottom: '3rem', position: 'relative' }}>
+                <motion.div 
+                  className="hero-content"
+                  animate={{ y: [-8, 8, -8] }}
+                  transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                  style={{ position: 'relative', zIndex: 2 }}
+                >
+                  {/* Glowing Web3 Orb behind text */}
+                  <motion.div
+                    animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.6, 0.4], rotate: [0, 90, 0] }}
+                    transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
+                    style={{
+                      position: 'absolute', top: '50%', left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      width: '300px', height: '300px',
+                      background: 'radial-gradient(circle, rgba(16,185,129,0.25) 0%, rgba(59,130,246,0.25) 40%, transparent 70%)',
+                      zIndex: -1, pointerEvents: 'none'
+                    }}
+                  />
 
                 {/* Glass badge pill */}
                 <motion.div
@@ -141,6 +159,7 @@ function App() {
                   <span style={{
                     background: 'linear-gradient(135deg, #10b981 0%, #06b6d4 45%, #3b82f6 100%)',
                     WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
+                    display: 'inline-block',
                   }}>
                     On-Chain.
                   </span>
@@ -177,6 +196,7 @@ function App() {
                   >
                     View On-Chain ↗
                   </motion.button>
+                </motion.div>
                 </motion.div>
               </section>
 

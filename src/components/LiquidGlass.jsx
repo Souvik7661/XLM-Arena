@@ -59,6 +59,15 @@ export default function LiquidGlass() {
       setIsPressed(false);
     };
 
+    // Watcher: If the button we are hovering over gets removed from the DOM (e.g. "Connect Wallet" turns into "Wallet Address"), clear the glass
+    const domWatcher = setInterval(() => {
+      if (currentTarget && !currentTarget.isConnected) {
+        currentTarget = null;
+        setTargetRect(null);
+        setIsPressed(false);
+      }
+    }, 100);
+
     // When the window loses focus (like clicking Connect Wallet to open the Freighter extension), hide the glass to prevent sticking
     const handleWindowBlur = () => {
       currentTarget = null;
@@ -75,6 +84,7 @@ export default function LiquidGlass() {
     document.addEventListener('mouseup', handleMouseUp);
 
     return () => {
+      clearInterval(domWatcher);
       window.removeEventListener('scroll', updateRect, true);
       window.removeEventListener('resize', updateRect);
       window.removeEventListener('blur', handleWindowBlur);
