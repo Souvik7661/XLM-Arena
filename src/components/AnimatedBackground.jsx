@@ -3,69 +3,105 @@ import { motion } from 'framer-motion';
 
 export default function AnimatedBackground() {
   return (
-    <div style={{ position: 'fixed', inset: 0, zIndex: -1, overflow: 'hidden', pointerEvents: 'none', background: 'var(--bg)' }}>
-      {/* Dynamic Cybersecurity/Esports Grid */}
-      <motion.div 
+    <div style={{ position: 'fixed', inset: 0, zIndex: -1, overflow: 'hidden', pointerEvents: 'none', background: '#050b14' }}>
+
+      {/* Deep space base gradient */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        background: 'radial-gradient(ellipse at 15% 85%, rgba(16,185,129,0.08) 0%, transparent 50%), radial-gradient(ellipse at 85% 15%, rgba(59,130,246,0.08) 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(139,92,246,0.04) 0%, transparent 70%)',
+      }} />
+
+      {/* Subtle dot grid */}
+      <div style={{
+        position: 'absolute', inset: 0,
+        backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)',
+        backgroundSize: '48px 48px',
+        maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 80%)',
+      }} />
+
+      {/* Large aurora orb — top right */}
+      <motion.div
         style={{
-          position: 'absolute',
-          top: '-50%', left: '-50%', width: '200%', height: '200%',
-          backgroundImage: `
-            linear-gradient(rgba(0,245,160,0.08) 1px, transparent 1px), 
-            linear-gradient(90deg, rgba(0,245,160,0.05) 1px, transparent 1px)
-          `,
-          backgroundSize: '100px 100px',
-          transformOrigin: 'center'
+          position: 'absolute', top: '-20%', right: '-10%',
+          width: '60vw', height: '60vw', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(59,130,246,0.09) 0%, rgba(16,185,129,0.04) 50%, transparent 70%)',
+          filter: 'blur(60px)',
         }}
-        animate={{
-          y: [0, 100],
-          rotate: [0, 0.5, -0.5, 0]
-        }}
-        transition={{
-          y: { repeat: Infinity, duration: 4, ease: "linear" },
-          rotate: { repeat: Infinity, duration: 8, ease: "easeInOut" }
-        }}
+        animate={{ scale: [1, 1.15, 0.95, 1.1, 1], x: [0, 30, -15, 20, 0], y: [0, -20, 10, -15, 0] }}
+        transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
       />
 
-      {/* Cyber/Neon pulse rings */}
+      {/* Large aurora orb — bottom left */}
       <motion.div
         style={{
-          position: 'absolute',
-          top: '20%', left: '10%',
-          width: '30vw', height: '30vw',
-          border: '2px solid rgba(0,217,245,0.1)',
-          borderRadius: '50%',
-          boxShadow: '0 0 40px rgba(0,217,245,0.05)'
+          position: 'absolute', bottom: '-20%', left: '-10%',
+          width: '55vw', height: '55vw', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(16,185,129,0.08) 0%, rgba(6,182,212,0.04) 50%, transparent 70%)',
+          filter: 'blur(60px)',
         }}
-        animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeOut" }}
+        animate={{ scale: [1, 1.1, 0.9, 1.05, 1], x: [0, -20, 15, -10, 0], y: [0, 20, -10, 15, 0] }}
+        transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
       />
-      
+
+      {/* Center purple glow */}
       <motion.div
         style={{
-          position: 'absolute',
-          bottom: '10%', right: '10%',
-          width: '40vw', height: '40vw',
-          border: '2px dashed rgba(124,58,237,0.1)',
-          borderRadius: '50%',
-          boxShadow: '0 0 60px rgba(124,58,237,0.08)'
+          position: 'absolute', top: '30%', left: '35%',
+          width: '35vw', height: '35vw', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(139,92,246,0.05) 0%, transparent 70%)',
+          filter: 'blur(80px)',
         }}
-        animate={{ rotate: [0, 360], scale: [1, 1.2, 1] }}
-        transition={{ rotate: { duration: 20, repeat: Infinity, ease: "linear" }, scale: { duration: 6, repeat: Infinity, ease: "easeInOut" } }}
+        animate={{ scale: [1, 1.2, 0.85, 1], opacity: [0.5, 1, 0.4, 0.5] }}
+        transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut', delay: 6 }}
       />
-      
-      {/* Aggressive Green Glow */}
+
+      {/* Animated top border beam */}
       <motion.div
-        style={{ 
-          position: 'absolute', borderRadius: '50%', filter: 'blur(100px)', 
-          width: '40vw', height: '40vw', background: 'rgba(0,245,160,0.08)', 
-          bottom: '-15%', left: '30%'
+        style={{
+          position: 'absolute', top: 0, left: 0, right: 0,
+          height: '1px',
+          background: 'linear-gradient(90deg, transparent 0%, rgba(16,185,129,0) 20%, rgba(16,185,129,0.5) 50%, rgba(59,130,246,0.5) 70%, transparent 100%)',
         }}
-        animate={{
-          scale: [1, 1.3, 0.9, 1.2, 1],
-          opacity: [0.6, 1, 0.5, 0.8, 0.6]
-        }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        animate={{ opacity: [0.3, 0.8, 0.3] }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
       />
+
+      {/* Floating particles */}
+      {[...Array(12)].map((_, i) => (
+        <motion.div
+          key={i}
+          style={{
+            position: 'absolute',
+            width: i % 3 === 0 ? '3px' : '2px',
+            height: i % 3 === 0 ? '3px' : '2px',
+            borderRadius: '50%',
+            background: i % 2 === 0 ? 'rgba(16,185,129,0.5)' : 'rgba(59,130,246,0.5)',
+            top: `${10 + (i * 7) % 80}%`,
+            left: `${5 + (i * 11) % 90}%`,
+          }}
+          animate={{
+            y: [0, -30, 0],
+            x: [0, i % 2 === 0 ? 15 : -15, 0],
+            opacity: [0.3, 0.8, 0.3],
+          }}
+          transition={{ duration: 5 + i * 0.8, repeat: Infinity, ease: 'easeInOut', delay: i * 0.4 }}
+        />
+      ))}
+
+      {/* Orbiting ring */}
+      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '900px', height: '900px', opacity: 0.03 }}>
+        <motion.div
+          style={{ position: 'absolute', inset: 0, border: '1px solid #10b981', borderRadius: '50%' }}
+          animate={{ rotate: 360 }}
+          transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
+        />
+        <motion.div
+          style={{ position: 'absolute', inset: '80px', border: '1px solid #3b82f6', borderRadius: '50%' }}
+          animate={{ rotate: -360 }}
+          transition={{ duration: 45, repeat: Infinity, ease: 'linear' }}
+        />
+      </div>
+
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import OnboardingBot from './OnboardingBot';
 
 /* ─── Particle Canvas ─────────────────────────────────────── */
 function ParticleCanvas() {
@@ -153,30 +154,7 @@ function HexRing() {
   );
 }
 
-/* ─── Terminal boot text ──────────────────────────────────── */
-function BootText() {
-  const [lines, setLines] = useState([]);
-  const sequence = [
-    '> Initializing Stellar RPC connection...',
-    '> Loading prediction markets...',
-    '> Verifying smart contracts...',
-    '> System ready.',
-  ];
-  useEffect(() => {
-    sequence.forEach((line, i) => {
-      setTimeout(() => setLines(prev => [...prev, line]), 600 + i * 480);
-    });
-  }, []);
-  return (
-    <div style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.7rem', color: '#334155', letterSpacing: '0.03em', minHeight: '80px', textAlign: 'left', maxWidth: '320px' }}>
-      {lines.map((l, i) => (
-        <motion.div key={i} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4 }} style={{ color: i === lines.length - 1 ? '#10b981' : '#334155', marginBottom: '0.2rem' }}>
-          {l}
-        </motion.div>
-      ))}
-    </div>
-  );
-}
+// BootText removed in favor of OnboardingBot
 
 /* ─── Main Splash Screen ──────────────────────────────────── */
 export default function SplashScreen({ onDone }) {
@@ -278,60 +256,15 @@ export default function SplashScreen({ onDone }) {
             Decentralized esports prediction market on <span style={{ color: '#10b981' }}>Stellar</span>
           </motion.p>
 
-          {/* Boot terminal */}
+          {/* AI Onboarding Bot */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 1.5 }}
+            style={{ minHeight: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}
           >
-            <BootText />
+            <OnboardingBot onDone={handleEnter} />
           </motion.div>
-
-          {/* Divider */}
-          <motion.div
-            initial={{ scaleX: 0, opacity: 0 }}
-            animate={{ scaleX: 1, opacity: 1 }}
-            transition={{ duration: 1.2, ease: [0.4, 0, 0.2, 1], delay: 1.6 }}
-            style={{ width: '200px', height: '1px', background: 'linear-gradient(90deg, transparent, rgba(16,185,129,0.5), transparent)' }}
-          />
-
-          {/* Enter Button */}
-          <motion.button
-            initial={{ opacity: 0, y: 16, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 1.9 }}
-            onClick={handleEnter}
-            whileHover={{ scale: 1.06 }}
-            whileTap={{ scale: 0.96 }}
-            style={{
-              position: 'relative',
-              background: 'transparent',
-              border: '1px solid rgba(16,185,129,0.6)',
-              borderRadius: '10px',
-              padding: '0.85rem 3rem',
-              color: '#10b981',
-              fontSize: '0.9rem',
-              fontWeight: 700,
-              fontFamily: "'Space Mono', monospace",
-              cursor: 'pointer',
-              letterSpacing: '2px',
-              textTransform: 'uppercase',
-              animation: 'enterPulse 2.5s ease-in-out infinite',
-              overflow: 'hidden',
-            }}
-          >
-            <span style={{ position: 'relative', zIndex: 1 }}>[ Enter Arena ]</span>
-            {/* Shimmer */}
-            <motion.div
-              animate={{ x: ['-100%', '200%'] }}
-              transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1.5, ease: 'linear' }}
-              style={{
-                position: 'absolute', top: 0, bottom: 0, left: 0, width: '40%',
-                background: 'linear-gradient(90deg, transparent, rgba(16,185,129,0.15), transparent)',
-                pointerEvents: 'none',
-              }}
-            />
-          </motion.button>
         </div>
 
         {/* Corner decorations */}
