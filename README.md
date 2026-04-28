@@ -75,7 +75,7 @@ Based on the collected user feedback, the following iteration was identified and
 - **Security Checklist:** Completed and audited. [View SECURITY.md](./SECURITY.md)
 
 ### Community & Demo Day
-- **Community Contribution:** [View Twitter Post](https://twitter.com/your_handle/status/your_post_id) *(Replace with your actual tweet link)*
+- **Community Contribution:** [Follow on Twitter for Updates](https://x.com/souvikk075)
 - **Demo Day Presentation:** [View Google Slides Deck](https://docs.google.com/presentation/d/your_presentation_id/edit?usp=sharing) *(Replace with your presentation link)*
 
 ## 💻 Getting Started (Local Development)
