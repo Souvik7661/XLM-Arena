@@ -97,3 +97,18 @@ Based on ongoing user feedback analysis, the following improvements are planned 
 
 ## License
 MIT
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Frontend Framework | React 18 + Vite |
+| Animations | Framer Motion |
+| Styling | Vanilla CSS (GPU-accelerated) |
+| Wallet | Freighter API |
+| Blockchain SDK | Stellar SDK v11 |
+| Smart Contract | Soroban (Rust) |
+| Hosting | Vercel |
+| Monitoring | Sentry |
+| CI/CD | GitHub Actions |
+
