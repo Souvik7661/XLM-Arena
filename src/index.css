@@ -1,3 +1,12 @@
+/* ============================================================
+   XLM Arena - Global Design System
+   Performance Notes:
+   - All animations use transform/opacity only (GPU-composited)
+   - No layout-triggering properties animated (no top/left/width)
+   - will-change applied selectively to avoid memory overhead
+   - Hardware-accelerated via translateZ(0) where needed
+   ============================================================ */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -279,3 +288,4 @@ body {
   .admin-panels { grid-template-columns: 1fr; }
   .tx-row { grid-template-columns: 1fr; }
 }
+
