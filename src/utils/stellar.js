@@ -1,3 +1,7 @@
+// XLM Arena - Stellar SDK Utilities
+// Handles transaction building, fee bump sponsorship,
+// and Friendbot-based account funding for testnet.
+
 import {
   Horizon,
   TransactionBuilder,
@@ -108,3 +112,4 @@ export async function ensureAccountFunded(publicKey) {
     await new Promise((resolve) => setTimeout(resolve, 2000));
   }
 }
+
