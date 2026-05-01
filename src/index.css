@@ -281,8 +281,10 @@ body {
   body { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
   .navbar { padding: 0 1rem; }
   .navbar-nav { display: none; }
-  .hero { padding: 2rem 1rem 1rem; padding-top: calc(1rem + env(safe-area-inset-top)); }
+  .hero { padding: 2rem 1rem 1rem; padding-top: calc(1rem + env(safe-area-inset-top)); flex-direction: column; text-align: center; }
+  .hero-content { display: flex; flexDirection: column; alignItems: center; }
   .hero h1 { font-size: clamp(2rem, 10vw, 3.5rem); } /* Prevent overflow on small screens */
+  .hud-panel { display: none !important; }
   .main { padding: 0 1rem 3rem; }
   .match-grid { grid-template-columns: 1fr; gap: 1rem; }
   .stats-bar { gap: 1rem; padding: 1rem; }

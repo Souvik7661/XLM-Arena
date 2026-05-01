@@ -65,7 +65,7 @@ function ParticleCanvas() {
 /* ─── Glitch Text ─────────────────────────────────────────── */
 function GlitchTitle() {
   return (
-    <div style={{ position: 'relative', fontFamily: "'Inter', sans-serif", fontWeight: 900, fontSize: 'clamp(3.5rem, 10vw, 6.5rem)', lineHeight: 1, letterSpacing: '-0.03em', userSelect: 'none' }}>
+    <div style={{ position: 'relative', fontFamily: "'Inter', sans-serif", fontWeight: 900, fontSize: 'clamp(2.2rem, 10vw, 6.5rem)', lineHeight: 1, letterSpacing: '-0.03em', userSelect: 'none' }}>
       <style>{`
         @keyframes glitch1 {
           0%,95%,100% { transform: translate(0); }
@@ -114,11 +114,11 @@ function GlitchTitle() {
       </span>
 
       {/* Glitch ghost 1 */}
-      <div style={{ position: 'absolute', inset: 0, color: '#ef4444', fontWeight: 900, fontSize: 'clamp(3.5rem, 10vw, 6.5rem)', animation: 'glitch2 1.5s infinite', animationDelay: '0.05s', pointerEvents: 'none', willChange: 'transform, opacity' }}>
+      <div style={{ position: 'absolute', inset: 0, color: '#ef4444', fontWeight: 900, fontSize: 'clamp(2.2rem, 10vw, 6.5rem)', animation: 'glitch2 1.5s infinite', animationDelay: '0.05s', pointerEvents: 'none', willChange: 'transform, opacity' }}>
         XLMArena
       </div>
       {/* Glitch ghost 2 */}
-      <div style={{ position: 'absolute', inset: 0, color: '#06b6d4', fontWeight: 900, fontSize: 'clamp(3.5rem, 10vw, 6.5rem)', animation: 'glitch2 1.5s infinite', animationDelay: '0.1s', pointerEvents: 'none', willChange: 'transform, opacity' }}>
+      <div style={{ position: 'absolute', inset: 0, color: '#06b6d4', fontWeight: 900, fontSize: 'clamp(2.2rem, 10vw, 6.5rem)', animation: 'glitch2 1.5s infinite', animationDelay: '0.1s', pointerEvents: 'none', willChange: 'transform, opacity' }}>
         XLMArena
       </div>
     </div>
@@ -188,7 +188,7 @@ function HUDDataPanels() {
   return (
     <>
       {/* Left Panel */}
-      <div style={{ position: 'absolute', left: '5%', top: '20%', width: '220px', height: '300px', border: '1px solid rgba(6,182,212,0.4)', background: 'rgba(6,182,212,0.05)', padding: '15px', color: '#06b6d4', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', zIndex: 10, clipPath: 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)', pointerEvents: 'none' }}>
+      <div className="hud-panel" style={{ position: 'absolute', left: '5%', top: '20%', width: '220px', height: '300px', border: '1px solid rgba(6,182,212,0.4)', background: 'rgba(6,182,212,0.05)', padding: '15px', color: '#06b6d4', fontFamily: "'Space Mono', monospace", fontSize: '0.75rem', zIndex: 10, clipPath: 'polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%)', pointerEvents: 'none' }}>
         <div style={{ borderBottom: '1px solid #ef4444', paddingBottom: '5px', marginBottom: '10px', color: '#ef4444', fontWeight: 'bold' }}>SYS_DATA_STREAM</div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
           {data.slice(0,5).map((d, i) => (
@@ -206,7 +206,7 @@ function HUDDataPanels() {
       </div>
 
       {/* Right Panel */}
-      <div style={{ position: 'absolute', right: '5%', top: '25%', width: '200px', border: '1px solid rgba(6,182,212,0.4)', background: 'rgba(6,182,212,0.05)', padding: '15px', color: '#06b6d4', fontFamily: "'Space Mono', monospace", fontSize: '0.7rem', zIndex: 10, clipPath: 'polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%)', pointerEvents: 'none' }}>
+      <div className="hud-panel" style={{ position: 'absolute', right: '5%', top: '25%', width: '200px', border: '1px solid rgba(6,182,212,0.4)', background: 'rgba(6,182,212,0.05)', padding: '15px', color: '#06b6d4', fontFamily: "'Space Mono', monospace", fontSize: '0.7rem', zIndex: 10, clipPath: 'polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%)', pointerEvents: 'none' }}>
         <div style={{ borderBottom: '1px solid #06b6d4', paddingBottom: '5px', marginBottom: '10px' }}>TARGET_LOCK</div>
         <div style={{ position: 'relative', width: '100%', height: '100px', border: '1px solid rgba(6,182,212,0.2)', overflow: 'hidden' }}>
            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(transparent 50%, rgba(6,182,212,0.2) 50%)', backgroundSize: '100% 4px', animation: 'dataScroll 1s linear infinite' }} />
@@ -278,7 +278,7 @@ export default function SplashScreen({ onDone }) {
             initial={{ opacity: 0, scale: 0.3, rotate: -20 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-            style={{ width: '80px', height: '80px', filter: 'drop-shadow(0 0 20px rgba(6,182,212,0.6))' }}
+            style={{ width: '60px', height: '60px', filter: 'drop-shadow(0 0 20px rgba(6,182,212,0.6))' }}
           />
 
           {/* Welcome label */}
@@ -315,11 +315,12 @@ export default function SplashScreen({ onDone }) {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 1.3 }}
             style={{
               color: '#475569',
-              fontSize: '0.95rem',
+              fontSize: '0.85rem',
               fontFamily: "'Inter', sans-serif",
               margin: 0,
-              maxWidth: '360px',
-              lineHeight: 1.6,
+              maxWidth: '320px',
+              lineHeight: 1.5,
+              padding: '0 1rem'
             }}
           >
             Decentralized esports prediction market on <span style={{ color: '#06b6d4' }}>Stellar</span>

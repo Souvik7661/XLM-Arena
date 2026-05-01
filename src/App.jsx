@@ -136,7 +136,7 @@ function App() {
                     border: '1px solid rgba(255,255,255,0.14)',
                     boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.2), 0 4px 20px rgba(0,0,0,0.2)',
                     color: 'var(--text-muted)', fontSize: '0.78rem', fontWeight: 600,
-                    marginBottom: '2rem', letterSpacing: '0.02em', marginLeft: '1rem'
+                    marginBottom: '2rem', letterSpacing: '0.02em', margin: '0 auto 2rem'
                   }}
                 >
                   <motion.div
@@ -151,10 +151,10 @@ function App() {
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ type: 'spring', stiffness: 280, damping: 24, delay: 0.2 }}
-                  style={{ position: 'relative', fontFamily: "'Space Mono', monospace", fontWeight: 700, textTransform: 'uppercase', display: 'flex', flexDirection: 'column', gap: '0.2rem' }}
+                  style={{ position: 'relative', fontFamily: "'Space Mono', monospace", fontWeight: 700, textTransform: 'uppercase', display: 'flex', flexDirection: 'column', gap: '0.2rem', alignItems: 'center' }}
                 >
-                  <span style={{ fontSize: '1.2rem', letterSpacing: '4px', color: 'var(--text)', textAlign: 'left', marginLeft: '1rem' }}>MARKETPLACE FOR</span>
-                  <span style={{ fontSize: 'clamp(2rem, 12vw, 6rem)', lineHeight: 1, letterSpacing: '4px', textAlign: 'left', display: 'flex', alignItems: 'center' }}>
+                  <span style={{ fontSize: '1.2rem', letterSpacing: '4px', color: 'var(--text)', textAlign: 'center' }}>MARKETPLACE FOR</span>
+                  <span style={{ fontSize: 'clamp(2rem, 12vw, 6rem)', lineHeight: 1, letterSpacing: '4px', textAlign: 'center', display: 'flex', alignItems: 'center' }}>
                     CR<span style={{ background: 'linear-gradient(90deg, #06b6d4, #ef4444)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', filter: 'drop-shadow(0 0 10px rgba(6,182,212,0.4))' }}>E</span>ATORS
                   </span>
                 </motion.h1>
@@ -163,7 +163,7 @@ function App() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ type: 'spring', stiffness: 280, damping: 24, delay: 0.35 }}
-                  style={{ textAlign: 'left', maxWidth: '600px', marginLeft: '1rem', marginTop: '1.5rem', marginBottom: '3rem', color: 'var(--text-muted)' }}
+                  style={{ textAlign: 'center', maxWidth: '600px', margin: '1.5rem auto 3rem', color: 'var(--text-muted)' }}
                 >
                   The prediction marketplace brings together players, creators, and crypto enthusiasts on a single platform to curate and explore top events.
                 </motion.p>
@@ -173,7 +173,7 @@ function App() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, type: 'spring', stiffness: 300, damping: 22 }}
-                  style={{ justifyContent: 'flex-start', marginLeft: '1rem' }}
+                  style={{ justifyContent: 'center' }}
                 >
                   <motion.button
                     className="btn btn-primary btn-lg glass-refractive"
@@ -195,7 +195,7 @@ function App() {
                 </motion.div>
                 </motion.div>
                 
-                <div style={{ flex: 1, position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '500px' }}>
+                <div style={{ flex: 1, position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '400px', width: '100%' }}>
                   <div style={{ width: '400px', height: '400px', position: 'relative' }}>
                     {/* Outer slow ring */}
                     <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 20, ease: 'linear' }} style={{ position: 'absolute', inset: 0, border: '2px dashed rgba(6,182,212,0.5)', borderRadius: '50%' }} />
