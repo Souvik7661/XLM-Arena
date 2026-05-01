@@ -6,7 +6,7 @@ $staged = & $git status --short
 if ($staged) {
     Write-Host "Staging changes:"
     $staged
-    & $git commit -m "docs: update UI and mobile responsive screenshots for Blue Belt MVP"
+    & $git commit -m "chore: final updates before Blue Belt submission"
 } else {
     Write-Host "No changes to commit."
 }
