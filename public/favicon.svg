@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f5a0" />
+      <stop offset="100%" stop-color="#00d9f5" />
+    </linearGradient>
+    <linearGradient id="purple" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#a78bfa" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Dark modern background with rounded corners -->
+  <rect width="120" height="120" rx="30" fill="#050810" />
+  
+  <!-- Left chain link (Neon) -->
+  <rect x="18" y="35" width="55" height="50" rx="18" fill="none" stroke="url(#neon)" stroke-width="14" />
+  
+  <!-- Right chain link (Purple) overlapping -->
+  <rect x="47" y="35" width="55" height="50" rx="18" fill="none" stroke="url(#purple)" stroke-width="14" />
+  
+  <!-- Inner cutout to simulate intertwining -->
+  <path d="M 47,40 L 47,80" stroke="#050810" stroke-width="16" />
+  <path d="M 47,40 L 47,80" stroke="url(#purple)" stroke-width="14" stroke-linecap="round" />
+  
+  <!-- Cyber accents -->
+  <circle cx="85" cy="85" r="8" fill="#00f5a0" />
+  <circle cx="35" cy="35" r="5" fill="#00d9f5" />
+</svg>
