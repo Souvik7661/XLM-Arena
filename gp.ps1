@@ -6,10 +6,9 @@ $staged = & $git status --short
 if ($staged) {
     Write-Host "Staging changes:"
     $staged
-    & $git commit -m "feat(ui): optimize application for mobile UI (bottom nav, bottom sheet modal, touch targets)"
+    & $git commit -m "docs: update UI and mobile responsive screenshots for Blue Belt MVP"
 } else {
     Write-Host "No changes to commit."
 }
 & $git push origin main 2>&1
 Write-Host "Push exit: $LASTEXITCODE"
-& $git log --oneline -5
